@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: shekharsir_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+      POSTGRES_DB: shekharsir_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    container_name: shekharsir_fastapi
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+psycopg2://postgres:postgrespassword@db:5432/shekharsir_db
+      SECRET_KEY: "production_secret_jwt_key_shekhar_sir_2026"
+      ENV_MODE: "production"
+      ALLOWED_ORIGINS: "*"
+      ALLOWED_HOSTS: "*"
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

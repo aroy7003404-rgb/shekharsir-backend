@@ -1,0 +1,75 @@
+name: shekharsir_app
+description: "Cross-platform educational management app for Shekhar Sir Classes."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Environment Variable Management
+  flutter_dotenv: ^5.1.0
+
+  # Automated Error Tracking & Performance Monitoring
+  sentry_flutter: ^8.0.0
+
+  # State Management
+  flutter_riverpod: ^2.5.1
+
+  # HTTP Client for FastAPI backend
+  dio: ^5.4.3+1
+
+  # Native Google Sign-In Authentication
+  google_sign_in: ^6.2.2
+
+  # Local Key-Value Storage for JWT persistence & Keep Logged In
+  shared_preferences: ^2.2.3
+
+  # Path Provider for Offline Material Downloads
+  path_provider: ^2.1.2
+
+  # File Picker for Uploading Study Materials
+  file_picker: ^8.0.0
+
+  # URL Launcher for Opening PDFs & Links
+  url_launcher: ^6.3.0
+
+  # Cross-Platform Share Functionality for Classroom Links
+  share_plus: ^10.0.0
+
+  # WebRTC Real-Time Screen Sharing & Audio/Video Streaming
+  flutter_webrtc: ^0.12.0
+
+  # Video Playback for Recorded Classrooms
+  video_player: ^2.8.2
+  chewie: ^1.7.5
+
+  # Jitsi Meet Live Classroom SDK (Whiteboard, Screen Share, Video/Audio)
+  jitsi_meet_flutter_sdk: ^13.2.0
+
+  # Embedded YouTube Player for Recorded Class Sessions
+  youtube_player_flutter: ^9.0.3
+
+  # Firebase Messaging & Push Notifications
+  firebase_core: ^3.1.0
+  firebase_messaging: ^15.0.1
+  flutter_local_notifications: ^17.1.2
+
+  # Internationalization & Date/Time Formatting
+  intl: ^0.19.0
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - .env
